@@ -10,7 +10,7 @@ function getComputerChoice() {
 }
 
 function playerSelection() {
-    
+    prompt("Rock, Paper, or Scissors?")
 }
 
 function playGame(getComputerChoice, playerSelection) {
