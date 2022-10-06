@@ -10,7 +10,7 @@ function getComputerChoice() {
 }
 
 function getPlayerChoice() {
-    let playerChoice = window.prompt("Rock, Paper, or Scissors?")
+    let playerChoice = window.prompt("Rock, Paper, or Scissors?") // Pressing cancel causes input to be null, which means .toLowerCase() will TypeError
     if (playerChoice.toLowerCase() == "rock") {
         return "rock"
     } else if (playerChoice.toLowerCase() == "paper") {
