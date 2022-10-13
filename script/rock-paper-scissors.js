@@ -11,14 +11,14 @@ function getComputerChoice() {
 
 function getPlayerChoice() {
     let playerChoice = window.prompt("Rock, Paper, or Scissors?"); // Pressing cancel causes input to be null, which means .toLowerCase() will TypeError
-    if (playerChoice.toLowerCase() == "rock") {
+    if (playerChoice.toLowerCase() === "rock") {
         return "rock";
-    } else if (playerChoice.toLowerCase() == "paper") {
+    } else if (playerChoice.toLowerCase() === "paper") {
         return "paper";
-    } else if (playerChoice.toLowerCase() == "scissors") {
+    } else if (playerChoice.toLowerCase() === "scissors") {
         return "scissors";
-    } else if (playerChoice == null) {
-        // find a way to break out
+    } else {
+        return;
     }
 }
 
@@ -29,40 +29,40 @@ function getPlayerChoice() {
  */
 function playGame(getComputerChoice, getPlayerChoice) {
     // Tied games
-    if (getComputerChoice == getPlayerChoice) {
+    if (getComputerChoice === getPlayerChoice) {
         return 2;
     }
 
     // Rock
-    if (getComputerChoice == "rock" && getPlayerChoice == "paper") {
+    if (getComputerChoice === "rock" && getPlayerChoice == "paper") {
         return 1;
-    } else if (getComputerChoice == "rock" && getPlayerChoice == "scissors") {
+    } else if (getComputerChoice === "rock" && getPlayerChoice === "scissors") {
         return 0;
-    } else if (getPlayerChoice == "rock" && getComputerChoice == "paper") {
+    } else if (getPlayerChoice === "rock" && getComputerChoice === "paper") {
         return 0;
-    } else if (getPlayerChoice == "rock" && getComputerChoice == "scissors") {
+    } else if (getPlayerChoice === "rock" && getComputerChoice === "scissors") {
         return 1;
     }
 
     // Paper
     if (getComputerChoice == "paper" && getPlayerChoice == "scissors") {
         return 1;
-    } else if (getComputerChoice == "paper" && getPlayerChoice == "rock") {
+    } else if (getComputerChoice === "paper" && getPlayerChoice === "rock") {
         return 0;
-    } else if (getPlayerChoice == "paper" && getComputerChoice == "scissors") {
+    } else if (getPlayerChoice === "paper" && getComputerChoice === "scissors") {
         return 0;
-    } else if (getPlayerChoice == "paper" && getComputerChoice == "rock") {
+    } else if (getPlayerChoice === "paper" && getComputerChoice === "rock") {
         return 1;
     }
 
     // Scissors
-    if (getComputerChoice == "scissors" && getPlayerChoice == "rock") {
+    if (getComputerChoice === "scissors" && getPlayerChoice === "rock") {
         return 1;
-    } else if (getComputerChoice == "scissors" && getPlayerChoice == "paper") {
+    } else if (getComputerChoice === "scissors" && getPlayerChoice === "paper") {
         return 0;
-    } else if (getPlayerChoice == "scissors" && getComputerChoice == "rock") {
+    } else if (getPlayerChoice === "scissors" && getComputerChoice === "rock") {
         return 0;
-    } else if (getPlayerChoice == "scissors" && getComputerChoice == "paper") {
+    } else if (getPlayerChoice === "scissors" && getComputerChoice === "paper") {
         return 1;
     }
 }
@@ -75,7 +75,7 @@ function game() {
         console.log("Computer: " + computerChoice);
         let playerChoice = getPlayerChoice();
         console.log("Player: " + playerChoice);
-        let result = playGame()
+        let result = playGame(computerChoice, playerChoice);
         if (result === 0) {
             computerScore++;
             console.log("Computer Score: " + computerScore);
