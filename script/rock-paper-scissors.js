@@ -18,7 +18,7 @@ function getPlayerChoice() {
     } else if (playerChoice.toLowerCase() === "scissors") {
         return "scissors";
     } else {
-        return;
+
     }
 }
 
@@ -34,7 +34,7 @@ function playGame(getComputerChoice, getPlayerChoice) {
     }
 
     // Rock
-    if (getComputerChoice === "rock" && getPlayerChoice == "paper") {
+    if (getComputerChoice === "rock" && getPlayerChoice === "paper") {
         return 1;
     } else if (getComputerChoice === "rock" && getPlayerChoice === "scissors") {
         return 0;
@@ -45,7 +45,7 @@ function playGame(getComputerChoice, getPlayerChoice) {
     }
 
     // Paper
-    if (getComputerChoice == "paper" && getPlayerChoice == "scissors") {
+    if (getComputerChoice === "paper" && getPlayerChoice === "scissors") {
         return 1;
     } else if (getComputerChoice === "paper" && getPlayerChoice === "rock") {
         return 0;
