@@ -1,3 +1,6 @@
+/**
+ * Helper function desgined to randomly generate a number, and correspond a move {"rock, "paper", or "scissors"} to it
+ */
 function getComputerChoice() {
     const randomNumber = Math.floor(Math.random() * 3); // Should get a random number between 0 & 2
     if (randomNumber === 0) {
@@ -9,6 +12,9 @@ function getComputerChoice() {
     }
 }
 
+/**
+ * Prompts the user for input, and returns the input as lowercase as long as the input is spelled "rock", "paper,", or "scissors"
+ */
 function getPlayerChoice() {
     let playerChoice = window.prompt("Rock, Paper, or Scissors?"); // Pressing cancel causes input to be null, which means .toLowerCase() will TypeError
     if (playerChoice.toLowerCase() === "rock") {
@@ -67,6 +73,10 @@ function playGame(getComputerChoice, getPlayerChoice) {
     }
 }
 
+/**
+ * Plays the game, keeps score, and stops when the game is won. An option to tie is implemented in the code, which should not be possible, 
+ * but serves as a fall back in case a tie game somehow happens.
+ */
 function game() {
     let playerScore = 0;
     let computerScore = 0;
